@@ -66,7 +66,8 @@ setInterval(function(){      var leftb1 = curleft("b1");
                                var leftb7 = curleft("b7");        
                                var leftb9 = curleft("b9");   leftc= curleft("c");       
                                var topc = curtop("c");            
-                               console.log(typeof(topc));
+                               if(topc==540)
+                                {          alert(topc);     }
                                
                                            
 
@@ -148,7 +149,7 @@ function curtop(m)
 {
 var y = $("."+m).position().top;
 str2 = String(y);
-top = parseInt(str2);
+let top = parseInt(str2);
 return top;  
 }
 
