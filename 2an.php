@@ -9,8 +9,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
-<div style="position: relative; height: 600px; width: 1100px; left: 170px; top:50px;  border: 10px red;">
-<video width="1110  " height="600"  autoplay   style="padding: 0;  margin: 0; border: 10px; border-color: red;">
+<div id = "d" style="color:white; height: 50px;  "> </div>
+<div style="position: relative; height: 600px; width: 1100px; left: 170px; top:50px;  border: 10px; border-color: red;">
+<video width="1110  " height="600"  autoplay   style="padding: 0;  margin: 0; ">
   <source src="Animated Clouds Motion Background.mp4" type="video/mp4">
 
 </video>
@@ -55,28 +56,31 @@ $(document).ready(  function(){
                                          xyza();
 
                                       function xyza()
-                                      {    for (var z = 1; z <= 20; z++) {    $(".b"+z).css("left","1090px");   }
+                                      {    for (let z = 1; z <= 20; z++) {    $(".b"+z).css("left","1090px");      }
                                                                                                               
-                                          
+                                          g=1; h=2;
 
                                           interval1=0;
                                                        var n = k*1000;
-                                                       if(k==8){ alert("Easy Level");  }
-                                                       if(k==6){ alert("normal level");  }
-                                                       if(k==4){ alert("hard level");  }
-                                                       if(k==2){ alert("very hard");  }
+                                                       if(k==8){ document.getElementById("d").innerHTML="LEVEL : EASY";  }
+                                                       if(k==6){ document.getElementById("d").innerHTML="LEVEL : NORMAL";  }
+                                                       if(k==4){ document.getElementById("d").innerHTML="LEVEL : HARD";  }
+                                                       if(k==2){ document.getElementById("d").innerHTML="LEVEL : LEGENDARY";  }
                                           var interval1 = setInterval( function(){   $(".b"+g).show();   $(".b"+h).show();     
                                                                                   $(".b"+g).animate({left:"8px"},n, function(){    });
                                                                                  $(".b"+h).animate({left:"8px"},n, function(){   });
                                                                                  g=g+2;  h=h+2;
                                                                                 if(g==25){   
                                                                                           clearInterval(interval1); 
-                                                                                          g=1; h=2;   k = k - 2;
+                                                                                             k = k - 2;
                                                                                             if(k>=2)
                                                                                             { 
                                                                                               
                                                                                               xyza(); }
-                                                                                          else  {   alert("Won the Game");   }
+                                                                                          else  {   alert("Won the Game");   
+
+
+                                                                                           }
                                                                                           }
 
                                                                                  }
